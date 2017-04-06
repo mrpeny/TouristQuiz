@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -8,4 +7,86 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Standard CardView Style -->
+    <style name="CardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/cardview_margin_left_right</item>
+        <item name="android:layout_marginRight">@dimen/cardview_margin_left_right</item>
+        <item name="android:layout_marginTop">@dimen/cardview_margin_top_bottom</item>
+        <item name="cardCornerRadius">2dp</item>
+        <item name="cardBackgroundColor">@android:color/background_light</item>
+    </style>
+
+    <!-- CardView LinearLayout Style-->
+    <style name="LinearLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- CardView ImageView Style-->
+    <style name="CardViewImageViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <!-- CardView Text Style-->
+    <style name="CardViewTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">@dimen/linearlayout_padding_top_bottom</item>
+    </style>
+
+    <!-- CardView RadioGroup style-->
+    <style name="CardViewButtonGroupStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/radio_group_padding_right_left</item>
+        <item name="android:paddingRight">@dimen/radio_group_padding_right_left</item>
+        <item name="android:paddingBottom">@dimen/radio_group_padding_bottom</item>
+    </style>
+
+    <!-- CardView RadioButton Style-->
+    <style name="CardViewSelectionButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/radio_button_padding_left</item>
+        <item name="android:paddingTop">@dimen/radio_button_padding_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/radio_button_padding_top_bottom</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- EditText Style -->
+    <style name="CardViewEditTextStyle" parent="CardViewTextStyle">
+        <item name="android:layout_marginBottom">@dimen/linearlayout_padding_top_bottom</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+    <!-- CardView Button Style -->
+    <style name="CardViewButtonStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/button_margin_top_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin_top_bottom</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <!-- RatingBar Style -->
+    <style name="CardViewRatingBarStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/button_margin_top_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin_top_bottom</item>
+        <item name="android:numStars">7</item>
+        <item name="android:isIndicator">true</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
 </resources>

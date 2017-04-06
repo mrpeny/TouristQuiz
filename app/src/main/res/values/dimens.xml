@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General layout dimens -->
+    <dimen name="screen_padding">16dp</dimen>
+
+    <!-- CardView layout margins and paddings -->
+    <dimen name="cardview_margin_left_right">8dp</dimen>
+    <dimen name="cardview_margin_top_bottom">8dp</dimen>
+    <dimen name="cardview_title_text_margin_bottom">8dp</dimen>
+
+    <!-- CardView LinearLayout paddings -->
+    <dimen name="linearlayout_padding_right_left">16dp</dimen>
+    <dimen name="linearlayout_padding_top_bottom">16dp</dimen>
+
+    <!-- RadioGroup padddings-->
+    <dimen name="radio_group_padding_right_left">16dp</dimen>
+    <dimen name="radio_group_padding_bottom">16dp</dimen>
+
+    <!-- RadioButton paddings -->
+    <dimen name="radio_button_padding_top_bottom">4dp</dimen>
+    <dimen name="radio_button_padding_left">8dp</dimen>
+
+    <!-- CardView EditText margins -->
+    <dimen name="edit_text_margin_left_right">16dp</dimen>
+
+    <!-- CardView Button margin -->
+    <dimen name="button_margin_top_bottom">16dp</dimen>
+</resources>

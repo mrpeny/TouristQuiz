@@ -1,18 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.touristquiz.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout style="@style/LinearLayoutStyle">
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/golden_gate2_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/golden_gate_question" />
+
+                <RadioGroup
+                    android:id="@+id/golden_gate_radio_group"
+                    style="@style/CardViewButtonGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/golden_gate_strait_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/golden_gate_strait" />
+
+                    <RadioButton
+                        android:id="@+id/golden_gate_color_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/golden_gate_color" />
+
+                    <RadioButton
+                        android:id="@+id/golden_gate_parts_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/golden_gate_parts" />
+
+                    <RadioButton
+                        android:id="@+id/golden_gate_decoration_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/golden_gate_decoration" />
+                </RadioGroup>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/big_ben_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/london_tower_question" />
+
+                <EditText
+                    android:id="@+id/london_tower_answer_edit_text"
+                    style="@style/CardViewEditTextStyle"
+                    android:hint="@string/london_hint_text" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/beach_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/beach_question" />
+
+                <RadioGroup style="@style/CardViewButtonGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/beach_australia_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/beach_australia" />
+
+                    <RadioButton
+                        android:id="@+id/beach_brazil_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/beach_brazil" />
+
+                    <RadioButton
+                        android:id="@+id/beach_india_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/beach_india" />
+
+                    <RadioButton
+                        android:id="@+id/beach_usa_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/beach_usa" />
+                </RadioGroup>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/statue_of_liberty_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/statue_of_liberty_question" />
+
+                <LinearLayout
+                    style="@style/CardViewButtonGroupStyle"
+                    android:orientation="vertical">
+
+
+                    <CheckBox
+                        android:id="@+id/statue_of_liberty_french_sculptor_checkbox"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/statue_of_liberty_french_sculptor" />
+
+                    <CheckBox
+                        android:id="@+id/statue_of_liberty_number_of_pieces_checkbox"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/statue_of_liberty_number_of_pieces" />
+
+                    <CheckBox
+                        android:id="@+id/statue_of_liberty_completion_time_checkbox"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/statue_of_liberty_completion_time" />
+
+                    <CheckBox
+                        android:id="@+id/statue_of_liberty_weight_checkbox"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/statue_of_liberty_weight" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/eiffel_tower_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/eiffel_tower_question" />
+
+                <RadioGroup style="@style/CardViewButtonGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/eiffel_tower_6_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/eiffel_tower_6" />
+
+                    <RadioButton
+                        android:id="@+id/eiffel_tower_60_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/eiffel_tower_60" />
+
+                    <RadioButton
+                        android:id="@+id/eiffel_tower_600_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/eiffel_tower_600" />
+
+                    <RadioButton
+                        android:id="@+id/eiffel_tower_6000_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/eiffel_tower_6000" />
+                </RadioGroup>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/great_wall_of_china_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/great_wall_question" />
+
+                <RadioGroup style="@style/CardViewButtonGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/great_wall_yes_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/great_wall_yes" />
+
+                    <RadioButton
+                        android:id="@+id/great_wall_no_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/great_wall_no" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <ImageView
+                    style="@style/CardViewImageViewStyle"
+                    android:src="@drawable/amusement_park_h300" />
+
+                <TextView
+                    style="@style/CardViewTextStyle"
+                    android:text="@string/amusement_park_question" />
+
+                <RadioGroup style="@style/CardViewButtonGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/amusement_park_florida_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/amusement_park_florida" />
+
+                    <RadioButton
+                        android:id="@+id/amusement_park_california_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/amusement_park_california" />
+
+                    <RadioButton
+                        android:id="@+id/amusement_park_paris_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/amusement_park_paris" />
+
+                    <RadioButton
+                        android:id="@+id/amusement_park_tokyo_radio_button"
+                        style="@style/CardViewSelectionButtonStyle"
+                        android:text="@string/amusement_park_tokyo" />
+                </RadioGroup>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/bottom_card_view"
+            style="@style/CardViewStyle"
+            android:focusable="true">
+
+            <LinearLayout style="@style/LinearLayoutStyle">
+
+                <RatingBar
+                    android:id="@+id/rating_bar"
+                    style="@style/CardViewRatingBarStyle"
+                    android:focusable="true"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/submit_button"
+                    style="@style/CardViewButtonStyle"
+                    android:onClick="submitAnswers"
+                    android:text="@string/submit_answers" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
