@@ -9,9 +9,10 @@
     <string name="golden_gate_decoration">Because it has golden decoration elements on it</string>
 
     <!-- London tower texts -->
-    <string name="london_tower_question">How is the tower in London’s Houses of Parliament called?</string>
+    <string name="london_tower_question">How is the tower in London’s Houses of Parliament
+        called?</string>
     <string name="london_hint_text">Enter the name of the tower here</string>
-    <string name="london_right_answer">Clock Tower</string>
+    <string name="london_right_answer" translatable="false">Clock Tower</string>
 
     <!-- Beach question texts -->
     <string name="beach_question">Which Country has the most beaches in the world?</string>
@@ -21,18 +22,21 @@
     <string name="beach_india">India</string>
 
     <!-- Statue of Liberty question texts -->
-    <string name="statue_of_liberty_question">Mark the true statements about the Statue of Liberty!</string>
+    <string name="statue_of_liberty_question">Mark the true statements about the
+        Statue of Liberty!</string>
     <string name="statue_of_liberty_french_sculptor">It was built by French sculptor</string>
     <string name="statue_of_liberty_completion_time">It took nine years to complete</string>
-    <string name="statue_of_liberty_number_of_pieces">It was shipped via boat in 350 individual pieces</string>
+    <string name="statue_of_liberty_number_of_pieces">It was shipped via boat in 350
+        individual pieces</string>
     <string name="statue_of_liberty_weight">It weights more than a Boeing 747 aircraft</string>
 
     <!-- Eiffel Tower question texts -->
-    <string name="eiffel_tower_question">For how many people serves the Eiffel Tower as their daily workplace?</string>
-    <string name="eiffel_tower_6">6</string>
-    <string name="eiffel_tower_60">60</string>
-    <string name="eiffel_tower_600">600</string>
-    <string name="eiffel_tower_6000">6000</string>
+    <string name="eiffel_tower_question">For how many people serves the Eiffel Tower as their
+        daily workplace?</string>
+    <string name="eiffel_tower_6" translatable="false">6</string>
+    <string name="eiffel_tower_60" translatable="false">60</string>
+    <string name="eiffel_tower_600" translatable="false">600</string>
+    <string name="eiffel_tower_6000" translatable="false">6000</string>
 
     <!-- Great Wall question texts -->
     <string name="great_wall_question">Is the Great Wall of China visible from the moon?</string>
@@ -41,13 +45,19 @@
 
     <!-- Amusement park question texts -->
     <string name="amusement_park_question">Which amusement park has the most visitors a year?</string>
-    <string name="amusement_park_florida">Magic Kingdom at Walt Disney World Resort - Florida, United States</string>
-    <string name="amusement_park_california">Disneyland Park at Disneyland Resort - Califronia, United States</string>
-    <string name="amusement_park_paris">Disneyland Park at Disneyland - Paris, France</string>
-    <string name="amusement_park_tokyo">Tokyo Disneyland at Tokyo Disney Resort - Tokyo, Japan</string>
+    <string name="amusement_park_florida" translatable="false">Magic Kingdom at
+        Walt Disney World Resort - Florida, United States</string>
+    <string name="amusement_park_california" translatable="false">Disneyland Park at
+        Disneyland Resort - Califronia, United States</string>
+    <string name="amusement_park_paris" translatable="false">Disneyland Park at
+        Disneyland - Paris, France</string>
+    <string name="amusement_park_tokyo" translatable="false">Tokyo Disneyland at
+        Tokyo Disney Resort - Tokyo, Japan</string>
 
     <!-- Button string -->
     <string name="submit_answers">Submit Answers</string>
+    <string name="show_right_answers">Show Answers</string>
+    <string name="restart">Restart</string>
 
     <!-- Result texts -->
     <string name="result_toast_text_0">You achieved <xliff:g>%d</xliff:g> points out of 7.

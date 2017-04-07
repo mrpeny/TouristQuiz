@@ -25,4 +25,5 @@
 
     <!-- CardView Button margin -->
     <dimen name="button_margin_top_bottom">16dp</dimen>
+    <dimen name="button_divider_margin">8dp</dimen>
 </resources>

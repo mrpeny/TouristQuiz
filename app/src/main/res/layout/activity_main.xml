@@ -6,9 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.touristquiz.MainActivity">
 
-    <LinearLayout style="@style/LinearLayoutStyle">
+    <LinearLayout
+        android:id="@+id/linear_layout_main"
+        style="@style/LinearLayoutStyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
-        <android.support.v7.widget.CardView style="@style/CardViewStyle">
+        <android.support.v7.widget.CardView
+            android:id="@+id/top_card_view"
+            style="@style/CardViewStyle"
+            android:focusable="true">
 
             <LinearLayout style="@style/LinearLayoutStyle">
 
@@ -80,7 +88,9 @@
                     style="@style/CardViewTextStyle"
                     android:text="@string/beach_question" />
 
-                <RadioGroup style="@style/CardViewButtonGroupStyle">
+                <RadioGroup
+                    android:id="@+id/beach_radio_group"
+                    style="@style/CardViewButtonGroupStyle">
 
                     <RadioButton
                         android:id="@+id/beach_australia_radio_button"
@@ -158,7 +168,9 @@
                     style="@style/CardViewTextStyle"
                     android:text="@string/eiffel_tower_question" />
 
-                <RadioGroup style="@style/CardViewButtonGroupStyle">
+                <RadioGroup
+                    android:id="@+id/eiffel_tower_radio_group"
+                    style="@style/CardViewButtonGroupStyle">
 
                     <RadioButton
                         android:id="@+id/eiffel_tower_6_radio_button"
@@ -196,7 +208,9 @@
                     style="@style/CardViewTextStyle"
                     android:text="@string/great_wall_question" />
 
-                <RadioGroup style="@style/CardViewButtonGroupStyle">
+                <RadioGroup
+                    android:id="@+id/great_wall_radio_group"
+                    style="@style/CardViewButtonGroupStyle">
 
                     <RadioButton
                         android:id="@+id/great_wall_yes_radio_button"
@@ -225,7 +239,9 @@
                     style="@style/CardViewTextStyle"
                     android:text="@string/amusement_park_question" />
 
-                <RadioGroup style="@style/CardViewButtonGroupStyle">
+                <RadioGroup
+                    android:id="@+id/amusement_park_radio_group"
+                    style="@style/CardViewButtonGroupStyle">
 
                     <RadioButton
                         android:id="@+id/amusement_park_florida_radio_button"
@@ -254,6 +270,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/bottom_card_view"
             style="@style/CardViewStyle"
+            android:layout_marginBottom="@dimen/cardview_margin_top_bottom"
             android:focusable="true">
 
             <LinearLayout style="@style/LinearLayoutStyle">
@@ -266,9 +283,23 @@
 
                 <Button
                     android:id="@+id/submit_button"
-                    style="@style/CardViewButtonStyle"
+                    style="@style/CardViewUpperButtonStyle"
                     android:onClick="submitAnswers"
                     android:text="@string/submit_answers" />
+
+                <Button
+                    android:id="@+id/show_answers_button"
+                    style="@style/CardViewLowerButtonStyle"
+                    android:onClick="showAnswers"
+                    android:text="@string/show_right_answers"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/restart_button"
+                    style="@style/CardViewLowerButtonStyle"
+                    android:onClick="restartGame"
+                    android:text="@string/restart"
+                    android:visibility="gone" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

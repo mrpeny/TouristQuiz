@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="rn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Tourist Quiz</string>
+    <string name="amusement_park_question">Melyik vidámparknak van a legtöbb látogatója
+        egy évben?</string>
+    <string name="beach_australia">Ausztrália</string>
+    <string name="beach_brazil">Brazília</string>
+    <string name="beach_india">India</string>
+    <string name="beach_question">Melyik országnak van a legtöbb tengerpartja?</string>
+    <string name="beach_usa">Amerikai Egyesült Államok</string>
+    <string name="eiffel_tower_question">Hány embernek a napi munkahelye az Eiffel-torony?</string>
+    <string name="golden_gate_color">Mert aranyszínű festékkel van lefestve</string>
+    <string name="golden_gate_decoration">Mert arany dekorációs elemekkel van díszítve</string>
+    <string name="golden_gate_parts">Mert arany alkatrészek vannak a szerkezetében</string>
+    <string name="golden_gate_question">Miért hívják a Golden Gate hidat aranynak?</string>
+    <string name="golden_gate_strait">Mert a Golden Gate szorost fogja közre</string>
+    <string name="great_wall_no">Nem</string>
+    <string name="great_wall_question">Látható a Kínai nagy fal a Holdról?</string>
+    <string name="great_wall_yes">Igen</string>
+    <string name="london_tower_question">Hogy hívják a londoni parlament tornyát?</string>
+    <string name="restart">Új játék</string>
+    <string name="show_right_answers">Válaszok megtekintése</string>
+    <string name="statue_of_liberty_completion_time">Kilenc évig építették</string>
+    <string name="statue_of_liberty_french_sculptor">Egy francia építész készítette</string>
+    <string name="statue_of_liberty_number_of_pieces">Hajón szállították, 350 darabban
+        a mostani helyére</string>
+    <string name="statue_of_liberty_question">Jelöld be a Szabadság-szoborral kapcsolatos igaz
+        állításokat!</string>
+    <string name="statue_of_liberty_weight">Nehezebb mint egy Boeing 747-es</string>
+    <string name="submit_answers">Válaszok elküldése</string>
+    <string name="london_hint_text">Írd be a Torony nevét ide</string>
+    <!-- Result texts -->
+    <string name="result_toast_text_0"><xliff:g>%d</xliff:g> pontod van a 7-ből.
+        \nPróbáld újra!</string>
+    <string name="result_toast_text_1"><xliff:g>%d</xliff:g> pontod van a 7-ből.
+        \nNe csüggedj! Nehéz volt.</string>
+    <string name="result_toast_text_above_1"><xliff:g>%d</xliff:g> pontod van a 7-ből.
+        Nem rossz!</string>
+    <string name="result_toast_text_above_3"><xliff:g>%d</xliff:g> pontod van a 7-ből.
+        \nJó sokat tudsz a világ nevezetességeiről!</string>
+    <string name="result_toast_text_7"><xliff:g>%d</xliff:g> pontod van a 7-ből.
+        \nGratulálok, egy igazi Világjáró vagy!</string>
+</resources>

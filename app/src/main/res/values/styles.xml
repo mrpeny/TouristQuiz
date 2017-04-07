@@ -70,13 +70,21 @@
     </style>
 
     <!-- CardView Button Style -->
-    <style name="CardViewButtonStyle">
+    <style name="GeneralCardViewButtonStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="CardViewUpperButtonStyle" parent="GeneralCardViewButtonStyle">
         <item name="android:layout_marginTop">@dimen/button_margin_top_bottom</item>
         <item name="android:layout_marginBottom">@dimen/button_margin_top_bottom</item>
-        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="CardViewLowerButtonStyle" parent="GeneralCardViewButtonStyle">
+        <item name="android:layout_marginTop">@dimen/button_divider_margin</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin_top_bottom</item>
     </style>
 
     <!-- RatingBar Style -->
@@ -84,7 +92,6 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/button_margin_top_bottom</item>
-        <item name="android:layout_marginBottom">@dimen/button_margin_top_bottom</item>
         <item name="android:numStars">7</item>
         <item name="android:isIndicator">true</item>
         <item name="android:layout_gravity">center_horizontal</item>

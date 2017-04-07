@@ -1,29 +1,40 @@
 package com.example.android.touristquiz;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    // General Global variables
     int numOfRightAnswers = 0;
     int wrongAnswerColorId;
+    int rightAnswerColorId;
 
-    ScrollView scrollView;
-    CardView cardView;
+    // View needed for navigation, setting focus on it when needed
+    CardView topCardView;
 
+    // Content elements
+    LinearLayout linearLayoutMain;
     RadioButton goldenGateStrait;
     EditText londonClockTower;
+    String rightAnswer;
     RadioButton beachAustralia;
     CheckBox libertyFrenchSculpture;
     CheckBox libertyPieces;
@@ -33,8 +44,14 @@ public class MainActivity extends AppCompatActivity {
     RadioButton greatWallNo;
     RadioButton amusementFlorida;
 
+    // Bottom CardView elements
     RatingBar ratingBar;
     Button submitButton;
+    Button showAnswersButton;
+    Button restartButton;
+
+    // List of the wrong answers
+    List<Button> wrongAnswerButtonsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +59,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         wrongAnswerColorId = ContextCompat.getColor(getApplicationContext(), R.color.colorAccent);
+        rightAnswerColorId = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark);
 
-        scrollView = (ScrollView) findViewById(R.id.scroll_view);
-        cardView = (CardView) findViewById(R.id.bottom_card_view);
+        topCardView = (CardView) findViewById(R.id.top_card_view);
 
+        linearLayoutMain = (LinearLayout) findViewById(R.id.linear_layout_main);
         goldenGateStrait = (RadioButton) findViewById(R.id.golden_gate_strait_radio_button);
         londonClockTower = (EditText) findViewById(R.id.london_tower_answer_edit_text);
+        rightAnswer = getString(R.string.london_right_answer);
         beachAustralia = (RadioButton) findViewById(R.id.beach_australia_radio_button);
         libertyFrenchSculpture = (CheckBox) findViewById(R.id.statue_of_liberty_french_sculptor_checkbox);
         libertyPieces = (CheckBox) findViewById(R.id.statue_of_liberty_number_of_pieces_checkbox);
@@ -59,6 +78,36 @@ public class MainActivity extends AppCompatActivity {
 
         ratingBar = (RatingBar) findViewById(R.id.rating_bar);
         submitButton = (Button) findViewById(R.id.submit_button);
+        showAnswersButton = (Button) findViewById(R.id.show_answers_button);
+        restartButton = (Button) findViewById(R.id.restart_button);
+
+        Button[] wrongAnswerButtons = {(RadioButton) findViewById(R.id.golden_gate_color_radio_button)
+                , (RadioButton) findViewById(R.id.golden_gate_parts_radio_button)
+                , (RadioButton) findViewById(R.id.golden_gate_decoration_radio_button)
+                , (RadioButton) findViewById(R.id.beach_brazil_radio_button)
+                , (RadioButton) findViewById(R.id.beach_india_radio_button)
+                , (RadioButton) findViewById(R.id.beach_usa_radio_button)
+                , libertyWeight
+                , (RadioButton) findViewById(R.id.eiffel_tower_6_radio_button)
+                , (RadioButton) findViewById(R.id.eiffel_tower_60_radio_button)
+                , (RadioButton) findViewById(R.id.eiffel_tower_6000_radio_button)
+                , (RadioButton) findViewById(R.id.great_wall_yes_radio_button)
+                , (RadioButton) findViewById(R.id.amusement_park_california_radio_button)
+                , (RadioButton) findViewById(R.id.amusement_park_paris_radio_button)
+                , (RadioButton) findViewById(R.id.amusement_park_tokyo_radio_button)};
+
+        wrongAnswerButtonsList = new ArrayList<>(Arrays.asList(wrongAnswerButtons));
+
+        // Makes the on-screen soft keyboard disappear when user touches the main LinearLayout
+        linearLayoutMain.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                InputMethodManager imm = (InputMethodManager) linearLayoutMain.getContext()
+                        .getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(linearLayoutMain.getWindowToken(), 0);
+                return false;
+            }
+        });
     }
 
     public void submitAnswers(View view) {
@@ -72,12 +121,62 @@ public class MainActivity extends AppCompatActivity {
         showResult();
     }
 
-    private void showResult() {
+    public void showAnswers(View view) {
+        setTextColors(wrongAnswerColorId);
+        londonClockTower.setText(rightAnswer);
+        // Scrolling to the top CardView
+        topCardView.getParent().requestChildFocus(topCardView, topCardView);
+    }
+
+    public void restartGame(View view) {
+        numOfRightAnswers = 0;
         ratingBar.setRating(numOfRightAnswers);
+        setTextColors(rightAnswerColorId);
+
+        // setting the possible answers to initial state
+        ((RadioGroup) findViewById(R.id.golden_gate_radio_group)).clearCheck();
+        londonClockTower.setText("");
+        ((RadioGroup) findViewById(R.id.beach_radio_group)).clearCheck();
+        libertyFrenchSculpture.setChecked(false);
+        libertyPieces.setChecked(false);
+        libertyYears.setChecked(false);
+        libertyWeight.setChecked(false);
+        ((RadioGroup) findViewById(R.id.eiffel_tower_radio_group)).clearCheck();
+        ((RadioGroup) findViewById(R.id.great_wall_radio_group)).clearCheck();
+        ((RadioGroup) findViewById(R.id.amusement_park_radio_group)).clearCheck();
+
+        // setting the layout to initial state
+        ratingBar.setVisibility(View.GONE);
+        showAnswersButton.setVisibility(View.GONE);
+        restartButton.setVisibility(View.GONE);
+        submitButton.setVisibility(View.VISIBLE);
+
+        // Scrolling to the top CardView
+        topCardView.getParent().requestChildFocus(topCardView, topCardView);
+    }
+
+    private void showResult() {
         submitButton.setVisibility(View.GONE);
+        ratingBar.setRating(numOfRightAnswers);
         ratingBar.setVisibility(View.VISIBLE);
-        ratingBar.getParent().requestChildFocus(ratingBar, ratingBar);
+        showAnswersButton.setVisibility(View.VISIBLE);
+        restartButton.setVisibility(View.VISIBLE);
+
+        // set the focus on the bottom CardView
+        CardView bottomCardView = (CardView) findViewById(R.id.bottom_card_view);
+        bottomCardView.getParent().requestChildFocus(bottomCardView, bottomCardView);
         createToastMessage();
+    }
+
+    /**
+     * sets the color of the text of the buttons in batch that represent the wrong answers
+     *
+     * @param colorId the id of the color the button texts should be set to
+     */
+    private void setTextColors(int colorId) {
+        for (Button button : wrongAnswerButtonsList) {
+            button.setTextColor(colorId);
+        }
     }
 
     private void createToastMessage() {
@@ -106,29 +205,20 @@ public class MainActivity extends AppCompatActivity {
         if (goldenGateStrait.isChecked()) {
             numOfRightAnswers++;
         }
-        ((RadioButton)findViewById(R.id.golden_gate_color_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton)findViewById(R.id.golden_gate_parts_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton)findViewById(R.id.golden_gate_decoration_radio_button)).setTextColor(wrongAnswerColorId);
     }
 
     private void checkLondonTowerAnswer() {
         String answer = londonClockTower.getText().toString().trim();
-        String rightAnswer = getString(R.string.london_right_answer);
 
         if (answer.equalsIgnoreCase(rightAnswer)) {
             numOfRightAnswers++;
         }
-        londonClockTower.setText(rightAnswer);
-        londonClockTower.getBackground().setColorFilter(wrongAnswerColorId, PorterDuff.Mode.SRC_IN);
     }
 
     private void checkBeachAnswer() {
         if (beachAustralia.isChecked()) {
             numOfRightAnswers++;
         }
-        ((RadioButton)findViewById(R.id.beach_brazil_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton)findViewById(R.id.beach_india_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton)findViewById(R.id.beach_usa_radio_button)).setTextColor(wrongAnswerColorId);
     }
 
     private void checkLibertyStatueAnswer() {
@@ -136,31 +226,23 @@ public class MainActivity extends AppCompatActivity {
                 && libertyYears.isChecked() && !libertyWeight.isChecked()) {
             numOfRightAnswers++;
         }
-        libertyWeight.setTextColor(wrongAnswerColorId);
     }
 
     private void checkEiffelTowerAnswer() {
         if (eiffel600.isChecked()) {
             numOfRightAnswers++;
         }
-        ((RadioButton) findViewById(R.id.eiffel_tower_6_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton) findViewById(R.id.eiffel_tower_60_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton) findViewById(R.id.eiffel_tower_6000_radio_button)).setTextColor(wrongAnswerColorId);
     }
 
     private void checkGreatWallAnswer() {
         if (greatWallNo.isChecked()) {
             numOfRightAnswers++;
         }
-        ((RadioButton) findViewById(R.id.great_wall_yes_radio_button)).setTextColor(wrongAnswerColorId);
     }
 
     private void checkAmusementAnswer() {
         if (amusementFlorida.isChecked()) {
             numOfRightAnswers++;
         }
-        ((RadioButton) findViewById(R.id.amusement_park_california_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton) findViewById(R.id.amusement_park_paris_radio_button)).setTextColor(wrongAnswerColorId);
-        ((RadioButton) findViewById(R.id.amusement_park_tokyo_radio_button)).setTextColor(wrongAnswerColorId);
     }
 }
