@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
     public void showAnswers(View view) {
         setTextColors(wrongAnswerColorId);
         londonClockTower.setText(rightAnswer);
+
         // Scrolling to the top CardView
         topCardView.getParent().requestChildFocus(topCardView, topCardView);
     }

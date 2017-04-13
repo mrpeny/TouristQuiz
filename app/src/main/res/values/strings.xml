@@ -2,7 +2,7 @@
     <string name="app_name">Tourist Quiz</string>
 
     <!-- Golden Gate question texts -->
-    <string name="golden_gate_question">Why the Golden Gate Bridge is called golden?</string>
+    <string name="golden_gate_question">Why is the Golden Gate Bridge called golden?</string>
     <string name="golden_gate_strait">Because it straddles the Golden Gate Strait waterway</string>
     <string name="golden_gate_color">Because of its paint color</string>
     <string name="golden_gate_parts">Because it has golden parts inside its structure</string>
@@ -15,7 +15,7 @@
     <string name="london_right_answer" translatable="false">Clock Tower</string>
 
     <!-- Beach question texts -->
-    <string name="beach_question">Which Country has the most beaches in the world?</string>
+    <string name="beach_question">Which country has the most beaches in the world?</string>
     <string name="beach_australia">Australia</string>
     <string name="beach_brazil">Brazil</string>
     <string name="beach_usa">United States of America</string>
@@ -31,7 +31,7 @@
     <string name="statue_of_liberty_weight">It weights more than a Boeing 747 aircraft</string>
 
     <!-- Eiffel Tower question texts -->
-    <string name="eiffel_tower_question">For how many people serves the Eiffel Tower as their
+    <string name="eiffel_tower_question">For how many people does the Eiffel Tower serve as their
         daily workplace?</string>
     <string name="eiffel_tower_6" translatable="false">6</string>
     <string name="eiffel_tower_60" translatable="false">60</string>
@@ -39,7 +39,7 @@
     <string name="eiffel_tower_6000" translatable="false">6000</string>
 
     <!-- Great Wall question texts -->
-    <string name="great_wall_question">Is the Great Wall of China visible from the moon?</string>
+    <string name="great_wall_question">Is the Great Wall of China visible from the Moon?</string>
     <string name="great_wall_yes">Yes</string>
     <string name="great_wall_no">No</string>
 
